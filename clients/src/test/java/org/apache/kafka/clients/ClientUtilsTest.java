@@ -61,7 +61,8 @@ public class ClientUtilsTest {
         assertTrue(validatedAddresses.size() >= 1, "Unexpected addresses " + validatedAddresses);
         List<String> validatedHostNames = validatedAddresses.stream().map(InetSocketAddress::getHostName)
                 .collect(Collectors.toList());
-        List<String> expectedHostNames = asList("93.184.215.14", "2606:2800:21f:cb07:6820:80da:af6b:8b2c");
+        List<String> expectedHostNames = asList("a23-192-228-84.deploy.static.akamaitechnologies.com", "a23-220-75-232.deploy.static.akamaitechnologies.com", "a23-215-0-136.deploy.static.akamaitechnologies.com", "a23-220-75-245.deploy.static.akamaitechnologies.com", "a23-192-228-80.deploy.static.akamaitechnologies.com", "a23-215-0-138.deploy.static.akamaitechnologies.com");
+
         assertTrue(expectedHostNames.containsAll(validatedHostNames), "Unexpected addresses " + validatedHostNames);
         validatedAddresses.forEach(address -> assertEquals(10000, address.getPort()));
     }
